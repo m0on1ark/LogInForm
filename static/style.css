@@ -1,0 +1,101 @@
+/* Общие настройки для всей страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a; /* Темно-синий "космический" фон */
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Карточка, в которой лежит форма */
+.main-card {
+    background-color: #1e293b;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+    color: #38bdf8; /* Голубой акцент */
+}
+
+p {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Стили для полей ввода */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: white;
+    box-sizing: border-box; /* Чтобы паддинги не раздували ширину */
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* Стили кнопок */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.3s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Синяя кнопка (для входа) */
+.btn-login {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-login:hover {
+    background-color: #7dd3fc;
+}
+
+/* Зеленая кнопка (для регистрации) */
+.btn-register {
+    background-color: #22c55e;
+    color: white;
+}
+
+.btn-register:hover {
+    background-color: #4ade80;
+}
+
+/* Ссылки для перехода между страницами */
+.link-box {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.link-box a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-box a:hover {
+    text-decoration: underline;
+}

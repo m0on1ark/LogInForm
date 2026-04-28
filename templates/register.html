@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="main-card">
+        <h1>Registration</h1>
+        <div id="status-message" style="margin-bottom: 15px;"></div>
+        <p>Create your account</p>
+        <script>
+            const ErrorBox = document.getElementById('status-message');
+            const params = new URLSearchParams(window.location.search);
+            const error = params.get('error');  
+            let content = "";
+            let style = "padding: 12px; border-radius: 8px; font-size: 0.9em; text-align: center; border: 1px solid ";
+            if (error === 'exists'){
+                content = "❌ User exists";
+                style += "#ef4444; background: rgba(239, 68, 68, 0.1); color: #f87171;";
+            }    
+
+            if (content) {
+                ErrorBox.innerHTML = `<div style="${style}">${content}</div>`;
+                setTimeout(() => window.history.replaceState({}, document.title, "/"), 3000);
+            }
+        </script>
+        <form action="/register" method="post">
+            <div style="margin-bottom: 15px;">
+                <input type="text" name="username" placeholder="Login" required 
+                       style="padding: 12px; border-radius: 8px; border: 1px solid #334155; width: 100%; background: #1e293b; color: white;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="password" name="password" placeholder="Passwrod" required 
+                       style="padding: 12px; border-radius: 8px; border: 1px solid #334155; width: 100%; background: #1e293b; color: white;">
+            </div>
+            <button type="submit" 
+                    style="background: #22c55e; color: white; padding: 12px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer;">
+                Register
+            </button>
+        </form>
+
+        <div style="margin-top: 20px;">
+            <a href="/" style="color: #94a3b8; text-decoration: none; font-size: 0.9em;">← Back to Login</a>
+        </div>
+    </div>
+</body>
+</html>
